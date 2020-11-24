@@ -14,7 +14,9 @@ const graphQLImports = [
 
 @Module({
 
-  imports: [TypeOrmModule.forRoot(),
+  imports: [TypeOrmModule.forRoot({
+    keepConnectionAlive: true,
+  }),
     CrudModule,
     ...graphQLImports,
     GraphQLModule.forRoot({
